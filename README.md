@@ -4,7 +4,7 @@ A random monster spawner plugin for Minecraft 1.16
 ## About
 Monsterspawn a plugin that will spawn a monster every 30 (default) seconds. You can configure which mob you want to spawn. It can even spawn a random mob if you specify random as the mobtype. More about this later.
 
-This can lead to great cli#ckbait video's. If you do decide to create a video using this plugin, please consider a link to this repository. This is not required, but it would be very appreciated.
+If you do decide to create a video using this plugin, please consider a link to this repository. This is not required, but it would be very appreciated.
 
 ## Commands
 **/msstart:** This will start the spawning of monsters.
