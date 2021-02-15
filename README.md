@@ -43,4 +43,5 @@ All the permissions are named after their command:
 
 ## Little note
 * This is my first plugin. I made this one after a friend of me posted a video spawning a wither every 30 seconds, but it was done using commandblocks. I am sure there is a lot of place for improvement, and I am thankful to anybody who is willing to contribute to the project.
+* This project took about 6 days in total.
 * If you still have questions or have a suggestion, please join our [Discord Server](https://discord.gg/DfwrVBf6)
