@@ -21,13 +21,13 @@ Now let me show you some example commands.
 
 💡 If you want to see what the current selected mob is, just run /msmob (so with no arguments). It will tell you the mob and the name of the mob.
 
-###/msstart:
+### /msstart:
 **/msstart** will start all the chaos.
 
-###/msstop:
+### /msstop:
 **/msstop** will stop spawning monsters (and kill the previously spawned ones).
 
-###/msinterval:
+### /msinterval:
 **/msinterval 30** will set the interval between spawns to 30 seconds. Every 30 seconds a new monster will spawn.
 
 🔧You can NOT change the interval time while the plugin is running!
