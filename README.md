@@ -32,7 +32,7 @@ Now let me show you some example commands.
 
 🔧You can NOT change the interval time while the plugin is running!
 
-💡If you want to see what the current interval is, just run **/msinterval** (so with no arguments). This will tell you want the current interval is.
+💡If you want to see what the current interval is, just run **/msinterval** (so with no arguments). This will tell you what the current interval is.
 
 ## Permissions
 All the permissions are named after their command:
