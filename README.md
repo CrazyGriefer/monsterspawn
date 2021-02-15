@@ -31,4 +31,5 @@ Now let me show you some example commands.
 **/msinterval 30** will set the interval between spawns to 30 seconds. Every 30 seconds a new monster will spawn.
 
 🔧You can NOT change the interval time while the plugin is running!
+
 💡If you want to see what the current interval is, just run /msinterval (so with no arguments). This will tell you want the current interval is.
