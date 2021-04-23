@@ -29,6 +29,15 @@ public class StartCommand implements CommandExecutor {
 			Player p = (Player) sender;
 			
 			if (p.hasPermission("monsterspawn.start")) {
+				
+				// If the plugin is running the first time.
+				if (GlobalVar.FirstRun) {
+					
+					// Tell the player that a restart is needed.
+					p.sendMessage(GlobalVar.Prefix + ChatColor.RED + "The plugin is done setting itself up, please restart or reload your server!");
+					return true;
+				}
+				
 				GlobalVar.MobTitle = plugin.getConfig().getString("Mob.MobTitle");
 				GlobalVar.SelectedMob = plugin.getConfig().getString("Mob.SelectedMob");
 				if (GlobalVar.SpawnerOn == 0) {
@@ -64,7 +73,7 @@ public class StartCommand implements CommandExecutor {
 						for (Player player : Bukkit.getOnlinePlayers()) {
 							player.sendTitle(ChatColor.RED + GlobalVar.MessageTitle, ChatColor.AQUA + GlobalVar.MessageSubtitle, 5, 70, 5);
 							player.playSound(player.getLocation(), Sound.ENTITY_WITHER_SPAWN, 1.0f, 1.0f);
-					}
+						}
 						
 					}
 				} else {

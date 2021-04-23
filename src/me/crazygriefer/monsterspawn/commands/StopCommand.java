@@ -1,6 +1,7 @@
 package me.crazygriefer.monsterspawn.commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -22,10 +23,6 @@ public class StopCommand implements CommandExecutor {
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if (!(sender instanceof Player)) {
-			sender.sendMessage(GlobalVar.Prefix + ChatColor.RED + "Only players may execute this command!");
-			return true;
-		}
 		if (cmd.getName().equalsIgnoreCase("msstop")) {
 			Player p = (Player) sender;
 			
@@ -45,6 +42,19 @@ public class StopCommand implements CommandExecutor {
 					// Tell all players that MonsterSpawn has stopped...
 					for (Player player : Bukkit.getOnlinePlayers()) {
 						player.sendMessage(GlobalVar.Prefix + "MonsterSpawn has stopped. Stay safe my friend!");
+					}
+					
+					// For all players that died.
+					for (String Player : GlobalVar.PlayersDied) {
+						
+						// Get the player opjective.
+						Player PlayerThatDied = Bukkit.getPlayer(Player);
+						
+						// Get the server's default gamemode.
+						GameMode DefaultGamemode = Bukkit.getDefaultGameMode();
+						
+						// Place the player in the server's default gamemode.
+						PlayerThatDied.setGameMode(DefaultGamemode);
 					}
 				} else {
 					p.sendMessage(GlobalVar.Prefix + "MonsterSpawner has not been started yet. Use the command " + ChatColor.RED + "/msstart" + ChatColor.YELLOW + " to start it.");

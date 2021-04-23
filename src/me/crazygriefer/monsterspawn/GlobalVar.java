@@ -1,6 +1,8 @@
 package me.crazygriefer.monsterspawn;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import net.md_5.bungee.api.ChatColor;
 
@@ -20,7 +22,12 @@ public class GlobalVar {
 	public static String Temp1 = "";
 	public static String Host = "";
 	public static Boolean HostOnly = false;
-	public static Integer LoadingWidth = 50;
+	public static Integer LoadingWidth = 25;
 	public static String MessageTitle = "";
 	public static String MessageSubtitle = "";
+	public static List<String> PlayersDied = new ArrayList<String>();
+	public static List<String> DeathMessages = new ArrayList<String>();
+	public static Boolean CustomMessagesEnabled = true;
+	public static Boolean DisableSpectator = false;
+	public static Boolean FirstRun = false;
 }
