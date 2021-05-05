@@ -218,43 +218,43 @@ public class Main extends JavaPlugin {
 						float interval = (float) GlobalVar.Interval;
 						
 						// Caculate how many '+' characters there should be in the Actionbar.
-				        int loading = Math.round(GlobalVar.Counter / interval * (float) loadingwidth);
+				        	int loading = Math.round(GlobalVar.Counter / interval * (float) loadingwidth);
 				        
-				        // Calculate how many percent there should be displayed.
-				        int percent = (int) Math.round((GlobalVar.Counter / interval * 100));
+				        	// Calculate how many percent there should be displayed.
+				        	int percent = (int) Math.round((GlobalVar.Counter / interval * 100));
 				        
-				        // Get the right amount of '+' characters for the Actionbar.
-				        for (int i = loading -1; i > 1; i--) {
-				        	ActionBarText += "+";
-				        }
+				        	// Get the right amount of '+' characters for the Actionbar.
+				        	for (int i = loading -1; i > 1; i--) {
+				        		ActionBarText += "+";
+				        	}
 				        
-				        // Add the right spinning symbol from the array.
-				        ActionBarText += GlobalVar.LoadingArray[loadingindex];
-				        loadingindex = loadingindex + 1;
+				       		// Add the right spinning symbol from the array.
+				        	ActionBarText += GlobalVar.LoadingArray[loadingindex];
+				        	loadingindex = loadingindex + 1;
 				        
-				        // If the end of the spinning symobl list has been spotted, start again at the end.
-				        if (loadingindex == GlobalVar.LoadingArray.length) {
-				        	loadingindex = 0;
-				        }
+				        	// If the end of the spinning symobl list has been spotted, start again at the end.
+				        	if (loadingindex == GlobalVar.LoadingArray.length) {
+				        		loadingindex = 0;
+				        	}
 				        
-				        // Close the text and add the text for the rest of the Actionbar.
-				        ActionBarText += "\",\"color\":\"red\"},{\"text\":\"";
+				        	// Close the text and add the text for the rest of the Actionbar.
+				        	ActionBarText += "\",\"color\":\"red\"},{\"text\":\"";
 				        
-				        // Get the right amount of '-' characters for the Actionbar.
-				        for (int i = loadingwidth + 1 - loading; i > 1; i--) {
-				        	ActionBarText += "-";
-				        }
+				        	// Get the right amount of '-' characters for the Actionbar.
+				        	for (int i = loadingwidth + 1 - loading; i > 1; i--) {
+				        		ActionBarText += "-";
+				        	}
 				        
-				        // Finish up the Actionbar with the right percentage.
-				        ActionBarText += "\",\"color\":\"green\"},{\"text\":\" " + percent + "%\",\"color\":\"yellow\"}]";
+				        	// Finish up the Actionbar with the right percentage.
+				        	ActionBarText += "\",\"color\":\"green\"},{\"text\":\" " + percent + "%\",\"color\":\"yellow\"}]";
 				        
-				        // Check if the loadingwidth is set to 0. If so, do NOT display the actionbar.
-				        if (loadingwidth != 0) {
+				        	// Check if the loadingwidth is set to 0. If so, do NOT display the actionbar.
+				        	if (loadingwidth != 0) {
 				        	
-				        	// When everything is prepared, run the command to show the Actionbar to the players.
-				        	ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
-				        	Bukkit.dispatchCommand(console, "title @a actionbar " + ActionBarText);
-				        }
+				        		// When everything is prepared, run the command to show the Actionbar to the players.
+				        		ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
+				        		Bukkit.dispatchCommand(console, "title @a actionbar " + ActionBarText);
+				        	}
 					}
 					
 					// Increment the Counter variable.
