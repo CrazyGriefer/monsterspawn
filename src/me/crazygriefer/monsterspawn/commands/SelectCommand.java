@@ -77,25 +77,26 @@ public class SelectCommand implements CommandExecutor {
 				int argnr = 1;
 				
 				// Loop args.
-			    for (String arg : args) { 
+			   	for (String arg : args) { 
 			       	
-			    	// Exclude the 1st arg (the mobtype).
-			    	if (argnr != 1) {
+			    		// Exclude the 1st arg (the mobtype).
+			    		if (argnr != 1) {
 			       		
-			    		// Appends arg to StringBuilder.
-			    		sb.append(arg); 
-			    		if (argnr != args.length) {
+			    			// Appends arg to StringBuilder.
+			    			sb.append(arg); 
+			    			if (argnr != args.length) {
 			       			
-			    			// Appends space after each arg (except the last one).
-			    			sb.append(" "); 
+			    				// Appends space after each arg (except the last one).
+			    				sb.append(" "); 
+			    			}
 			    		}
-			    	}
 			       	
-			    	// Increment the argnr value by 1.
-			    	argnr += 1;
-			    }
+			    		// Increment the argnr value by 1.
+			    		argnr += 1;
+				
+				}
 			       
-			    // Convert the generated list to a string.
+			    	// Convert the generated list to a string.
 				String arg1 = sb.toString();
 				        
 				// Set the MobTitle to the second given argument.
