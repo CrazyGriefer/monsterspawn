@@ -55,22 +55,22 @@ public class OnPlayerDeath implements Listener {
 				Block skullBlock = loc.getBlock();
 				
 				// Place down the block.
-		        skullBlock.setType(Material.PLAYER_HEAD);
+		        	skullBlock.setType(Material.PLAYER_HEAD);
 		        
-		        // Get the current blockstate.
-		        BlockState state = skullBlock.getState();
+		        	// Get the current blockstate.
+		        	BlockState state = skullBlock.getState();
 		        
-		        // Define the blockstate as skull.
-		        Skull skull = (Skull) state;
+		        	// Define the blockstate as skull.
+		        	Skull skull = (Skull) state;
 		        
-		        // Get the UUID of the player that died.
-		        UUID uuid = p.getUniqueId();
+		        	// Get the UUID of the player that died.
+		        	UUID uuid = p.getUniqueId();
 		        
-		        // Set the head to the person's skin.
-		        skull.setOwningPlayer(Bukkit.getServer().getOfflinePlayer(uuid));
+		        	// Set the head to the person's skin.
+		        	skull.setOwningPlayer(Bukkit.getServer().getOfflinePlayer(uuid));
 		        
-		        // Update the head.
-		        skull.update();
+		        	// Update the head.
+		        	skull.update();
 		
 				// Add the player to the array of players that died.
 				GlobalVar.PlayersDied.add(p.getName());
@@ -88,7 +88,7 @@ public class OnPlayerDeath implements Listener {
 			        // Replace %player% with the player's displayname.
 			        message = replaceholder(message, "player", p.getDisplayName());
 			        
-			        // Send the custom death message.
+			        	// Send the custom death message.
 					event.setDeathMessage(message);
 				}
 			}
@@ -96,25 +96,26 @@ public class OnPlayerDeath implements Listener {
 	}
 	
 	// Replaceholder function. GET IT?! Replace + Placeholder = Replaceholder. xxxD
+	// Anyway, I stole SOME (trust me) of it from StackOverflow, but also did a lot myself. 
 	private String replaceholder(String text, String placeholder, String replaceto) {
 		
 		// Create a string buffer.
-    	StringBuffer sb = new StringBuffer();
+    		StringBuffer sb = new StringBuffer();
     	
-    	// Configure the matcher to look for the selected placeholder in the given text string.
-    	Matcher m = Pattern.compile("\\%(" + placeholder + ")\\%").matcher(text);
+    		// Configure the matcher to look for the selected placeholder in the given text string.
+    		Matcher m = Pattern.compile("\\%(" + placeholder + ")\\%").matcher(text);
     	
-    	// When the pattern is found.
-    	while (m.find()) {
+    		// When the pattern is found.
+    		while (m.find()) {
     		
-    		// Replace it to the given replaceto input.
-        	m.appendReplacement(sb, "" + replaceto);
-    	}
+			// Replace it to the given replaceto input.
+        		m.appendReplacement(sb, "" + replaceto);
+    		}
     	
-    	// Append the string to the stringbuilder.
-    	m.appendTail(sb);
+    		// Append the string to the stringbuilder.
+    		m.appendTail(sb);
     	
-    	// Return the string with the replaced placeholders.
+    		// Return the string with the replaced placeholders.
 		return sb.toString();
 	}
 }
